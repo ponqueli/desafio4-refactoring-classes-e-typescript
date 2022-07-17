@@ -1,4 +1,4 @@
-import React, { Component, createRef, useCallback } from 'react';
+import { createRef } from 'react';
 import { FiCheckSquare } from 'react-icons/fi';
 
 import { Form } from './styles';
