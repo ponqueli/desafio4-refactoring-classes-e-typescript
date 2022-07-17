@@ -77,10 +77,10 @@ export default function Dashboard(){
 
   return (
     <>
-      <Header openModal={()=>setModalOpen(true)} />
+      <Header setModalOpen={setModalOpen} />
       <ModalAddFood
         isOpen={modalOpen}
-        setIsOpen={()=>setModalOpen(true)}
+        setIsOpen={setModalOpen}
         handleAddFood={()=>handleAddFood({
           id: foods.length + 1,
           name: '',

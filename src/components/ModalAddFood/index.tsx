@@ -16,7 +16,7 @@ interface Food {
 
 interface IModalAddFoodProps {
   isOpen: boolean; 
-  setIsOpen: () => void;
+  setIsOpen: (isOpen:boolean) => void;
   handleAddFood: (food: Food) => void;
 }
 
@@ -31,7 +31,7 @@ export default function ModalAddFood(props:IModalAddFoodProps) {
   const handleSubmit: SubmitHandler<UnformField> = async () => {
     const data = formRef.current?.getData();
     handleAddFood(data);
-    setIsOpen();
+    setIsOpen(false);
   };
 
   return (

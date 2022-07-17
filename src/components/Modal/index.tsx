@@ -4,18 +4,17 @@ import ReactModal from 'react-modal';
 interface ModalProps {
   isOpen: boolean;
   children: React.ReactNode;
-  setIsOpen: () => void;
+  setIsOpen: (isOpen:boolean) => void;
 }
 
 export default function Modal(props:ModalProps){
   const { isOpen, setIsOpen, children } = props;
-  const [modalIsOpen] = useState(isOpen);
 
   return(
     <ReactModal
       shouldCloseOnOverlayClick={!false}
-      onRequestClose={setIsOpen}
-      isOpen={modalIsOpen}
+      onRequestClose={()=>setIsOpen(false)}
+      isOpen={isOpen}
       ariaHideApp={false}
       style={{
         content: {

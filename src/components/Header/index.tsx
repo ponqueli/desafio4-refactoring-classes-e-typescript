@@ -4,11 +4,11 @@ import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 
 interface HeaderProps {
-  openModal: () => void;
+  setModalOpen: (isOpen:boolean) => void;
 }
 
 export default function Header(props:HeaderProps){
-  const { openModal } = props;
+  const { setModalOpen } = props;
   
   return (
     <Container>
@@ -18,7 +18,7 @@ export default function Header(props:HeaderProps){
           <div>
             <button
               type="button"
-              onClick={openModal}
+              onClick={() => setModalOpen(true)}
             >
               <div className="text">Novo Prato</div>
               <div className="icon">
